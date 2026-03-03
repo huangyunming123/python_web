@@ -1,43 +1,165 @@
-# --- Python 通用忽略 ---
-# 字节码文件
+# ===================================
+# Python 项目专用 .gitignore 文件
+# ===================================
+
+# --- Python 编译文件 ---
 __pycache__/
 *.py[cod]
 *$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
 
-# 虚拟环境 (venv, venv3, env 等)
+# --- 虚拟环境 ---
+# 推荐忽略所有虚拟环境目录
 venv/
 env/
 ENV/
 .venv/
+.conda/
+conda-meta/
 
-# 依赖包管理
-requirements.txt
+# --- 依赖管理 ---
+# 如果是 pip 项目，保留 requirements.txt 以便安装依赖
+# requirements.txt
 Pipfile.lock
-*.egg-info/
-dist/
-build/
+poetry.lock
 
-# IDE 配置 (PyCharm, VS Code 等)
+# --- IDE 和编辑器 ---
+# PyCharm
 .idea/
-.vscode/
 *.iml
+*.iws
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# JetBrains IDEs 通用
 *.swp
 *.swo
 *~
-
-# 操作系统文件
 .DS_Store
-Thumbs.db
 
-# --- 项目特定敏感信息忽略 (重要) ---
-# 避免硬编码的账号密码、Cookies、Token 泄露
+# --- 操作系统文件 ---
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# --- 敏感信息和配置文件 (重要) ---
+# 环境变量和密钥
 .env
 .env.local
+.env.*.local
 *.key
 *.pem
+*.crt
+*.p12
+*.pfx
 secrets.json
 config_private.py
-
-# 如果打算将敏感配置单独存放，建议忽略此类文件
+credentials.json
+token.json
 auth_info.py
 cookies_backup.txt
+*.password
+*.secret
+
+# 数据库配置
+db.sqlite3
+*.db
+
+# --- Node.js 相关 (项目中有 package.json) ---
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm
+.yarn-integrity
+
+# --- JavaScript 相关文件 ---
+# 如果是不需要提交的练习文件或临时文件
+test*.js
+demo*.js
+temp*.js
+
+# --- 日志文件 ---
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# --- 测试和覆盖率报告 ---
+coverage/
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# --- Jupyter Notebook ---
+.ipynb_checkpoints
+
+# --- 其他常见忽略项 ---
+# 临时文件
+tmp/
+temp/
+*.tmp
+*.bak
+*.old
+
+# 文档构建
+docs/_build/
+site/
+
+# 压缩文件
+*.zip
+*.tar.gz
+*.rar
+
+# ===================================
+# 以下文件建议保留（不要忽略）
+# ===================================
+# requirements.txt  (依赖列表，便于团队协作)
+# package.json      (Node.js 配置)
+# *.md             (文档说明)
+# *.js             (JavaScript 源代码)
+# *.py             (Python 源代码)
+# .gitignore       (本文件本身)
