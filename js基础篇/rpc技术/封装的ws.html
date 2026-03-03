@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    !(function () {
+        if (window.flag) {
+
+        } else {
+            const ws = new WebSocket('ws://127.0.0.1:8111')
+            window.flag = true
+            ws.onerror = function () {
+                console.log("websocket 连接关闭")
+            }
+            ws.onmessage = function (event) {
+                e = JSON.parse(b(event.data)),
+                console.log('数据为= ', e)
+                var res = e('')
+                ws.send(res)
+            }
+            ws.onopen = function () {
+                console.log('webSocket 连接成功')
+            }
+        }
+    }())
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+@font-face 解决字体   指定字体
+
+TTF
+  window系统 的字体
+  OTF 支持unicode字符集
+  FON window95之前使用
+  TTC 多种字体集合
+  SHX CAD系统自带 不支持中文
+  EOT 早期浏览器使用
+  WOFF 网页字体 可转为TTF 用于桌面应用
+
+
+font.qqe2.com   字体在 线转换   将下载的file  后缀改为woff  拖进页面去
+
+
+字体反爬虫
+    网页数据不正常
+    找到字体文件 css 样式 @font-face
+    查看字体
+    找到字体 和 页面数据管理  找到映射关系
+
+
+pip install fontTools  处理字体文件

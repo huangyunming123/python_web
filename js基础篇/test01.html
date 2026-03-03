@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="js/jquery/jquery-1.8.3.min.js"></script>
+<script>
+    // $.ajax(
+    //     {
+    //         url: 'https://image.baidu.com/search/acjson?tn=resultjson_com&logid=9427531757301067696&ipn=rj&ct=201326592&is=&fp=result&fr=ala&word=%E5%9B%BE%E7%89%87&queryWord=%E5%9B%BE%E7%89%87&cl=2&lm=-1&ie=utf-8&oe=utf-8&adpicid=&st=&z=&ic=&hd=&latest=&copyright=&s=&se=&tab=&width=&height=&face=&istype=&qc=&nc=&expermode=&nojc=&isAsync=&pn=120&rn=30&gsm=78&1685437399327=',
+    //         type: 'GET',
+    //         //返回值类型
+    //         dataType: 'JSON',
+    //         success: function (res) {
+    //             console.log(res)
+    //         },
+    //         error: function (res) {
+    //             console.log(res)
+    //         },
+    //         async: true
+    //     }
+    // );
+    function ff() {
+        debugger
+    }
+    setInterval(ff, 200)
+
+    // 解决无限debugger 在断点的时候控制台执行以下
+    var _cons = constructor;
+    Function.prototype.constructor = function (s) {
+        if (s == "debugger") {
+            console.log(s)
+            return null;
+        }
+        return _cons(s)
+    }
+
+
+</script>
+
+
+</body>
+</html>

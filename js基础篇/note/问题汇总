@@ -1,0 +1,2 @@
+navigator is not defined
+处理: 不一定去处理navigator 直接看他判断条件

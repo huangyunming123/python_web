@@ -1,0 +1,6 @@
+遇到await 的时候
+const { h5st } = await
+可以在 控制台写
+
+ window.PSign.sign(paramsH5sign).then(res=>{console.log(res)})
+ 来获取结果

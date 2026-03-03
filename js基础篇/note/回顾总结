@@ -1,0 +1,56 @@
+定位方式
+hook   可以hook 方法
+xhr   url 上的关键字打xhr断点
+关键字 搜索
+cookie （去网站上拿现成的）
+
+
+https://www.cnblogs.com/xiaoweigege/p/14954648.html
+
+定位加密方式
+dom 断点：  定位的位置比较靠前  往下执行能找到
+
+xhr 断点   必须是xhr请求   位置在即将发送的位置  断点位置靠后  需要往前找
+
+hook断点   断点的位置是调用方法的时候   比较中间
+
+关键字搜索定位  猜测加密字段 赋值方式 如  analysis=  、  analysis:、 setAnalysis    (比较难收到 因为会用拼接等方式让你无法搜到)
+
+根据启动器定位
+
+
+基本定位顺序    先关键字搜索(三点 进行搜索)    --->  xhr断点(源代码处) ---> hook
+
+(xhr 断点 如果遇到异步  先在异步之前进行查看   如果不在之前生成 那就慢慢往下看)
+
+
+请求成功的回调  在发送请求之前就写了 所以 要在之前去寻找
+
+拦截器规律
+    一般成对出现
+
+        xhr 发送请求  服务器返回数据  回调请求成功方法 ajax 中的 success/then  error 响应拦截器
+
+
+i[jt](i[qt](a, d))
+=====================
+
+
+a = a[Ot]()[I1](_)
+
+a = i[jt](a)
+
+a = (a += v + t[Jt][T](t[Mt], _)) + (v + r) + (v + 3)
+
+a = (a += "@#" + "/rank/offline") + ("@#" + r) + ("@#" + 3)
+
+ function v(t) {
+                t = z[V1](t)[T](/%([0-9A-F]{2})/g, function(n, t) {
+                    return o(Y1 + t)
+                });
+                try {
+                    return z[Q1](t)
+                } catch (n) {
+                    return z[W1][K1](t)[U1](Z1)
+                }
+            }

@@ -1,0 +1,18 @@
+非对称加密算法
+
+    与对称加密区别
+        常见RSA 、DSA
+       对称  相同的秘钥
+            值长度不变
+
+       非对称  有公钥+私钥
+       非对称算法用于数字加密
+       搜索关键字：  new JSEncrypt（） JSEncrypt  setPublicKey setKey setPrivateKey getPublicKey
+
+       私钥长度   公钥长度  铭文长度  秘闻长度
+       428        128       1-53    88
+       812        216       1-117   172
+       1588       392       1-245   344
+
+
+//  搜索方式  encrypt 后可以在启动器搜索随意的js 包

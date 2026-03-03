@@ -1,0 +1,14 @@
+
+关键字定位:
+找到这个数据的加密位子  例如：requestid
+
+        requestid =
+        requestid:
+        setRequestHead('requestid','')
+
+        搜索關鍵字的好處: 距離加密位置更近
+
+        壞處：搜索的文件会特别多 需要下断点 来进行测试
+
+        可能会搜索不出来
+            代码做了混淆

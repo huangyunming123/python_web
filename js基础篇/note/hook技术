@@ -1,0 +1,74 @@
+
+
+执行过程中  修改代码逻辑
+
+比如  function aa（）{console.log(1)}  aa = function(){console.log(2)}
+
+为什么可以hook ?
+在开发者工具里执行代码 执行优先级是最高的  可以替代服务器的代码
+//**********************常用的hook方法***********************
+https://www.cnblogs.com/xiaoweigege/p/14954648.html
+
+
+hook 方法
+var _parse = JSON.parse
+_parse() 就跟 json.parse 是一样的效果
+JSON.parse = function(){console.log('我被hook了')}
+表单数据 经常调用json.parse 除非直接传数组    载荷数据经常JSON.stringify
+控制台中重写一下方法 就可以打断点了
+var _parse = JSON.parse
+JSON.parse = function(params){
+    debugger
+    return _parse(params)
+}
+//************ 自执行方法 ************
+(function(){
+var _parse = JSON.parse
+JSON.parse = function(params){
+    debugger
+    return _parse(params)
+})();
+i
+//获取 修改属性
+Object.defineProperty(p1,p2)
+p1:需要定义的当前对象  p2:需要定义的属性名
+user = {'age',12}
+aa= user.age
+Object.defineProperty(user,'age',{
+    get:function(){
+        return aa;
+    }
+    set:function(new_data){
+        aa = new_data
+        return new_data;
+    }
+})
+}
+
+//hook cookie  应对 cookie加密     document.cookie  hook的时候需要把cookie 清空
+(function () {
+    cookie_data = document.cookie;
+    Object.defineProperty(document, 'cookie',
+        {
+            set: function (val) {
+                if (val.indexOf('v') != -1) {
+                    debugger
+                }
+                cookie_data = val
+            },
+            get: function () {
+                return cookie_data
+            }
+        })
+})()
+
+//   xhr 关键字 hook
+(function(){
+var open = window.XMLHttpRequest.prototype.open;
+window.XMLHttpRequest.prototype.open = function (method, url, async){
+    if (url.indexOf("code")!=-1){
+        debugger;
+    }
+    return open.apply(this, arguments);
+};
+})()

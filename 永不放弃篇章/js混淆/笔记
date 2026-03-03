@@ -1,0 +1,40 @@
+异步前的代码 是看不到数据的 需要打断点  即使有数据 也是后面给赋值的
+
+异步关键字段
+xhr.send
+
+promise
+
+async await
+
+postMessage
+window.postMessage 是一种用于在不同的窗口、iframe 或者标签页之间安全地传递消息的 API，
+它可以跨域传递数据。它主要用来解决在同源策略下，不同来源的文档无法直接进行 JavaScript 交互的问题。postMessage 方法为跨文档消息传递提供了安全的途径。
+
+即 实现了 不同文件之间的通信 可以互相传递消息
+ otherWindow.postMessage(message, targetOrigin, [transfer]);
+● otherWindow: 要发送消息的目标窗口对象，可以是 window, iframe.contentWindow 等。
+● message: 发送的消息内容。可以是字符串、对象或其他可以序列化的对象。
+● targetOrigin: 目标窗口的源（协议+域名+端口号），用于控制消息发送的安全性。值可以是一个具体的域名（例如 https://example.com）或 "*"（表示不限制域名）。
+● [transfer]: 可选的 Transferable 对象数组，通常用于转移 ArrayBuffer 或 MessagePort 等。
+
+接收消息的窗口（例如 iframe 内部的脚本）可以通过监听 message 事件来获取消息：
+window.addEventListener('message', function(event) {
+      // 安全检查：确保消息来源是预期的
+      if (event.origin !== "https://xxxx.com") {
+          return;
+      }
+      // 处理消息
+      console.log('Received message:', event.data);
+  });
+
+  测试  添加一个事件监听器  message  用来监听发送消息
+
+  window.postMessage('1234', 'https://www.baidu.com')
+  window.addEventListener('message', function (event) {
+      console.log(event)
+  })
+●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●●
+
+
+xhr 找代码 如果是结果加密  遇到 异步的 new Promise() 一般要去他的上一个方法的then（）里面找

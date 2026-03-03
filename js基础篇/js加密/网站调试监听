@@ -1,0 +1,9 @@
+网站如果有调试
+
+方法1   时间监听器  搜索网址关键字
+
+方法2   搜索clear()  location.href   close()
+  window.close(),
+  window.history.back()
+
+然后右键替换代码

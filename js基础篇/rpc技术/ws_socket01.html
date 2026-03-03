@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id="box" type="text">
+<button onclick="ps()">发送</button>b
+
+<script>
+    var ws = new WebSocket('ws://127.0.0.1:8111')
+    ws.onerror = function () {
+        console.log("websocket 连接关闭")
+    }
+    ws.onmessage = function (event) {
+        console.log('数据为= ',event.data)
+        // ws.send('大悲掌')
+    }
+    ws.onopen = function () {
+        console.log('webSocket 连接成功')
+    }
+
+    function ps() {
+        var text = document.getElementById('box').value
+        ws.send(text)
+    }
+
+</script>
+
+</body>
+</html>

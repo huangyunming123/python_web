@@ -1,0 +1,12 @@
+class Person {
+
+    constructor(name) {
+        console.log('子集')
+        this.name = name;
+    }
+
+    dance() {
+        console.log('跳舞')
+    }
+
+}

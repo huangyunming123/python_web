@@ -1,0 +1,55 @@
+为什么要混淆代码
+    js代码  公开的  可以直接复制
+
+
+ox_   ex 开头  跟着1-6个数字这种
+
+push  shift 关键字
+
+=================基本格式代码
+
+1、 定义一个数组
+2、重构函数
+3、自解析函数
+4、真实代码
+5 可以删除的垃圾代码
+
+window['atob'] 可以吧 直接改成atob  有些版本有问题 遇到的时候百度一下
+
+压缩后的代码 如果格式化 有时候无法执行 会报错 栈堆 溢出  解决方法  压缩回去
+https://www.jsjiami.com/jiemi.html
+
+
+混淆后有时候找加密位置不好找  需要在请求的回调方法找  Promise.resolve
+
+
+如果遇到自执行的加载器 那就不能 bc('xxx')  而是直接bc.aaa 即可 因为 自执行的 会把所有的都放到bc
+正常
+    function o(t) {
+        if (n[t])
+            return n[t].exports;
+        var i = n[t] = {
+            i: t,
+            l: !1,
+            exports: {}
+        };
+        return e[t].call(i.exports, i, i.exports, o),
+            i.l = !0,
+            i.exports
+    }
+自执行
+    i = function o(t) {
+        if (n[t])
+            return n[t].exports;
+        var i = n[t] = {
+            i: t,
+            l: !1,
+            exports: {}
+        };
+        return e[t].call(i.exports, i, i.exports, o),
+            i.l = !0,
+            i.exports
+    }(o[0])
+
+type =application/octet-stream
+如果是二进制类型的数据 入参 data = bytes(xxx)

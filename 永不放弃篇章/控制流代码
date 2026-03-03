@@ -1,0 +1,24 @@
+return regeneratorRuntime.wrap((function(t) {
+                            while (1)
+                                switch (t.prev = t.next) {
+                                case 0:
+                                    if (null !== this.$wasm) {
+                                        t.next = 4;
+                                        break
+                                    }
+                                    return t.next = 3,
+                                    new f["a"];
+                                case 3:
+                                    this.$wasm = t.sent;
+                                case 4:
+                                case "end":
+                                    return t.stop()
+                                }
+                        }
+                        ), t, this)
+                    }
+                    )));
+
+
+                    此处的case 3：
+                    接受的代码 "t"  是  case 0 处  return 的

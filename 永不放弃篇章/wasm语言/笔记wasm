@@ -1,0 +1,32 @@
+WebAssembly（简称wasm）是一种现代的低级编程语言，设计用于在网页上运行高性能的代码。它可以被看作是一个编译目标，开发者可以将C、C++、Rust等语言编写的代码编译成WebAssembly格式，然后在浏览器中运行。
+WebAssembly的主要特点包括：
+● 高性能：接近原生性能，能够比JavaScript更快地执行计算密集型任务。
+● 安全性：在沙箱环境中运行，保证了代码的安全性。
+● 跨平台：可以在各种浏览器和操作系统上运行，支持多种硬件架构。
+● 与JavaScript互操作：可以与JavaScript无缝协作，调用JavaScript函数，或者从JavaScript调用wasm模块。
+
+调用原理
+1. 创建wasm模块（使用C++、Rust等语言编写代码并编译成wasm文件）
+
+2. 加载wasm模块（使用js中的fetch API获取wasm文件，并使用WebAssembly.instantiate或者WebAssembly.instantiateStreaming完成加载）
+
+fetch('example.wasm')
+    .then(response => response.arrayBuffer())
+    .then(bytes => WebAssembly.instantiate(bytes))
+    .then(result => {
+        // 使用wasm实例
+        const instance = result.instance;
+        // 调用导出的函数
+        instance.exports.someFunction();
+    });
+
+    // 更高效的流式加载方式
+WebAssembly.instantiateStreaming(fetch('example.wasm'))
+    .then(obj => {
+        // 直接获取实例
+        const instance = obj.instance;
+        // 使用导出的函数
+        instance.exports.someFunction();
+    });
+
+3. 调用wasm导出函数（通过实例化的wasm模块，可以调用导出的函数并与js进行交互）

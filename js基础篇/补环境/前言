@@ -1,0 +1,17 @@
+// 类似于代理 hook  获取 或者 修改 的时候会进入拦截器方法
+
+
+var aa = {
+"name": "baichuan",
+age:18
+}
+
+
+var aa = new Proxy(aa){
+    get: function(target,propertykey,receiver){
+    //本身对象
+    //访问属性
+    //代理对象
+    console.log(target,properties,receiver)
+    }
+}
