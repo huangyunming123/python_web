@@ -47,4 +47,31 @@ if (params) {
 // console.log(paramsH5sign)
 // console.log("-------------------------------------")
 var result = window.PSignCom._$sdnmd(paramsH5sign);
-console.log(result)
+console.log(result['h5st'])
+
+console.log(time)
+
+
+
+
+
+
+//
+// const fs = require('fs');
+// const express = require('express');
+// const app = express();
+//
+// //
+// // app.use(express.json());
+// // app.post('/api/data', (req, res) => {
+// //     console.log('接收到数据:', req);
+// //     res.json({status: 'success', result: result});
+// // });
+// //
+// //
+// //
+// //
+// // const PORT = 5987;
+// // app.listen(PORT, () => {
+// //     console.log(`服务已启动: 端口为 ${PORT} ...`);
+// // });
