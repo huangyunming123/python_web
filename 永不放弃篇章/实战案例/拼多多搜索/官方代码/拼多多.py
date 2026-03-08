@@ -23,10 +23,8 @@ headers = {
     "sec-ch-ua-platform": "\"Windows\""
 }
 url = "https://apiv2.pinduoduo.com/api/gindex/tf/query_tf_goods_info"
-
-anti_content = execjs.compile(open('5.main.js', 'r', encoding='utf-8').read()).call('get_anti_content')
-# print(anti_content)
-
+anti_content = execjs.compile(open('./5.main.js', 'r', encoding='utf-8').read()).call('get_anti_content')
+print(anti_content)
 params = {
     "tf_id": "TFRQ0v00000Y_13396",
     "page": 1,
