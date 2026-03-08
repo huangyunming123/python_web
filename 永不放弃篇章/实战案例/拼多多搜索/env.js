@@ -1,3 +1,5 @@
+delete Buffer
+
 window = global;
 
 // 拼多多检测Buffer关键字
