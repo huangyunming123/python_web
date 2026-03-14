@@ -19,4 +19,7 @@ print(call_res)
 js_code = ''
 with open('../js基础篇/js/demo1.js', encoding='utf-8') as f:
     js_code = f.read()
+    aaMethod = execjs.compile(js_code)
+    call = aaMethod.call('aa', 1,2)
+    print(call)
 print(js_code)

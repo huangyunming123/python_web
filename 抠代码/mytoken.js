@@ -7,3 +7,5 @@ function getMD5() {
     return [r,e.toString()];
 }
 
+console.log(getMD5());
+

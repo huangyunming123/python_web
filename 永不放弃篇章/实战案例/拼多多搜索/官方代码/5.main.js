@@ -16,6 +16,6 @@ function get_anti_content() {
 
 console.log(get_anti_content());
 // 导出函数
-module.exports = {
-    get_h5st: get_anti_content
-};
+// module.exports = {
+//     get_h5st: get_anti_content
+// };
