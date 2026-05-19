@@ -1,4 +1,5 @@
 from datetime import datetime
+from typing import Iterable
 
 # 获取当前日期和时间
 now = datetime.now()
@@ -14,3 +15,23 @@ print(today)  # 输出格式：2025-08-15
 # 只获取时间
 current_time = datetime.now().time()
 print(current_time)  #
+
+# try:
+#     a = 10 / 0
+# except :
+#     print("除数不能为零")
+#     raise Exception("除数不能为零")
+# finally:
+#     print("无论是否发生异常，都会执行的代码")
+
+# list = [12,32,3]
+# print(isinstance(list, Iterable))
+#
+# iter__ = list.__iter__()
+# print(iter__)
+
+range_ = [i for i in range(5)]
+print(range_)
+
+in_range_ = (i for i in range(5))
+print(in_range_)

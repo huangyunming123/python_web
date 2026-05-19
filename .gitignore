@@ -96,7 +96,7 @@ cookies_backup.txt
 db.sqlite3
 *.db
 
-# --- Node.js 相关 (项目中有 package.json) ---
+# --- Node.js 相关 (项目中有 my_package.json) ---
 node_modules/
 npm-debug.log*
 yarn-debug.log*
@@ -158,7 +158,7 @@ site/
 # 以下文件建议保留（不要忽略）
 # ===================================
 # requirements.txt  (依赖列表，便于团队协作)
-# package.json      (Node.js 配置)
+# my_package.json      (Node.js 配置)
 # *.md             (文档说明)
 # *.js             (JavaScript 源代码)
 # *.py             (Python 源代码)
