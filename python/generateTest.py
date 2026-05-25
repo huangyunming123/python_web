@@ -10,7 +10,7 @@ def gen():
 g = gen()
 print(next(g))
 
-send = g.send("hello")
+print(g.send("hello"))
 
 print(next(g))
 

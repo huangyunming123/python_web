@@ -1,0 +1,13 @@
+我要想一个接口发送请求 就扣curl 如下
+curl --location --request POST 'https://crm.beeselectcloud.com/crmmanager/product/async/retryProduct' \
+--header 'Authorization: 59hK4WsuV1TR8haZPHfsze2BE9m/fGCUB3P1BnPa/hjEWM066k+VTr1lmztVCjOMUyCFeX5wMfatgcy3Hh9a3RWNioCeFxbXqIiS7USb6BySlS06q3CeFSYjYT0vuaiq+YURGlNNvxG89ZsRObm4BudJxbG1iTop1l0DZWaVhb6PdC9Ty2lLZ/kBhFRAn0fzxBE/OvmIiskphDlbaIxHykqpUlPzeMyISn4BYABHCjenyVPnyr68LSfqygH0u0vr' \
+--header 'platform: 0' \
+--header 'shopFullPath: zhenxiyouxuan.beeselectcloud.com' \
+--header 'userType: 1' \
+--header 'Cookie: Himall-User=59hK4WsuV1TR8haZPHfsze2BE9m%2FfGCUB3P1BnPa%2FhjEWM066k%2BVTr1lmztVCjOM48jBRylVRRLT5Ok8%2FtfY%2FrHrjwaBy1WvrACp5DvhyXXS%2B4wQlddHbbzEuZrLIGq4FvoujIuOhaxT0oqQEkt2MjWf3%2FFSE4dtTEG4zWnBShaK2SV0bDrGX%2FbJjzxGHDtMtaVxnKCDE7EcdwALavCZVnluOtPFZLj0s04kYtDHxLE%3D; HWWAFSESTIME=1779329299442; HWWAFSESID=a2a48820266c34daac; JSESSIONID=9CAAAB93E94D4FE514A4CC1766C05C28; SEND_GRAPHICAL_VERIFICATION_JSESSIONID=9CAAAB93E94D4FE514A4CC1766C05C28; Himall-User-Beehivemanage=59hK4WsuV1TR8haZPHfsze2BE9m%2FfGCUB3P1BnPa%2FhjEWM066k%2BVTr1lmztVCjOMUyCFeX5wMfatgcy3Hh9a3RWNioCeFxbXqIiS7USb6BySlS06q3CeFSYjYT0vuaiq%2BYURGlNNvxG89ZsRObm4BudJxbG1iTop1l0DZWaVhb6PdC9Ty2lLZ%2FkBhFRAn0fzxBE%2FOvmIiskphDlbaIxHykqpUlPzeMyISn4BYABHCjenyVPnyr68LSfqygH0u0vr' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "productIdList":[1722969114036224]
+}'
+
+请求参数productIdList 的值 在data文件 麻烦 一次请求10条 分批次进行请求

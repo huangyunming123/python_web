@@ -35,3 +35,14 @@ print(range_)
 
 in_range_ = (i for i in range(5))
 print(in_range_)
+
+print(isinstance(in_range_, Iterable))
+print(isinstance(range_, Iterable))
+list = [1,2,3]
+arr = (1,2,3)
+print(isinstance(list, Iterable))
+print(isinstance(arr, Iterable))
+
+iterator = iter(list)
+print(isinstance(iterator, Iterable))
+
